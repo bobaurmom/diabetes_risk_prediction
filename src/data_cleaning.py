@@ -6,7 +6,7 @@ class DataCleaner:
 
     def clean_data(self):
         try:
-            print(f"Reading {self.file_path}...")
+            print(f"Reading {self.file_path}")
             df = pd.read_csv(self.file_path)
             print(f"Number of duplicates: {df.duplicated().sum()}")
             df = df.drop_duplicates()
@@ -33,5 +33,5 @@ cleaned_df = cleaner.clean_data()
 
 #Save it to a new file
 if cleaned_df is not None:
-    cleaned_df.to_csv('data/clean_diabetes.csv', index=False)
-    print("Saved cleaned data to /data/clean_diabetes.csv!")
+    cleaned_df.to_csv('data/clean_diabetes.csv', index=False) #index=False to avoid adding an extra index column
+    print("Saved cleaned data")
