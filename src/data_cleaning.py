@@ -8,8 +8,8 @@ class DataCleaner:
         try:
             print(f"Reading {self.file_path}")
             df = pd.read_csv(self.file_path)
-            print(f"Number of duplicates: {df.duplicated().sum()}")
-            df = df.drop_duplicates()
+            # print(f"Number of duplicates: {df.duplicated().sum()}")
+            # df = df.drop_duplicates()
             # Turning yes/no to 1/0
             df = df.replace({'Yes': 1, 'No': 0})
 
@@ -33,5 +33,5 @@ cleaned_df = cleaner.clean_data()
 
 #Save it to a new file
 if cleaned_df is not None:
-    cleaned_df.to_csv('data/clean_diabetes.csv', index=False) #index=False to avoid adding an extra index column
+    cleaned_df.to_csv('data/clean_diabetes2.csv', index=False) #index=False to avoid adding an extra index column
     print("Saved cleaned data")

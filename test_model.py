@@ -22,3 +22,4 @@ else:
     print(f"probabilty {neg_prob:.2f}%")
 
 
+
