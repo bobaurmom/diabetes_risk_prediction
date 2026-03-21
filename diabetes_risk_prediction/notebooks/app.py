@@ -47,7 +47,7 @@ def predict(Age, Gender, Polyuria, Polydipsia, sudden_weight_loss, weakness,
     elif avg_positive < 0.75:
         alert = "⚠️ MODERATE — Moderate risk detected. Consider consulting a doctor."
     else:
-        alert = "🚨 HIGH RISK — To prevent from cutting you legs, please see a doctor immediately!"
+        alert = "🚨 HIGH RISK — To prevent from cutting your legs, please see a doctor immediately!"
 
     return (f"{rf_label} (Negative: {rf_prob[0]:.2f}, Positive: {rf_prob[1]:.2f})",
             f"{lr_label} (Negative: {lr_prob[0]:.2f}, Positive: {lr_prob[1]:.2f})",
