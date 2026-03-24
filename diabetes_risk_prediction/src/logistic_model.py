@@ -5,6 +5,7 @@ from sklearn.linear_model import LinearRegression
 import pandas as pd
 import numpy as np
 import joblib 
+import os
 
 class LogisticModel:
     def __init__(self, X_train, y_train):
@@ -42,7 +43,8 @@ class LogisticModel:
 
 # Example usage:
 
-df = pd.read_csv('data/clean_diabetes2.csv') 
+base_dir = os.path.dirname(os.path.abspath(__file__))
+df = pd.read_csv(os.path.join(base_dir, '..', 'data', 'clean_diabetes.csv'))
 # Split Features and Target
 X = df.drop('class', axis=1)
 y = df['class']
@@ -58,4 +60,5 @@ l1.predict(X_test, y_test)
 
         
 # Save results
-l1.save_model('models/logistic_model.joblib')
+base_dir = os.path.dirname(os.path.abspath(__file__))
+l1.save_model(os.path.join(base_dir, '..', 'models', 'logistic_model.joblib'))
